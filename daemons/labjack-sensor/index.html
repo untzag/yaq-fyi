@@ -73,6 +73,11 @@
 
 <h2 id='configuration'>configuration<a href='#configuration'> ¶</a></h2>
 
+<p>
+  <a href="https://github.com/yaq-project/yaqd-labjack/tree/main/example-yaq-configs/labjack-sensor">Example configuration files.</a>
+</p>
+
+
   
     <p class="tab30">
     <b>address</b> (string)
@@ -205,6 +210,17 @@
      Serial number for the particular device represented by the daemon <br> 
     
       <i>from <a href='../../traits/is-daemon'>is-daemon</a></i>
+    
+    
+    </p>
+    
+
+  
+    <p class="tab30">
+    <b>settings</b> (array)
+    <i>default: []</i>
+    <br>
+     All settings will be written roughly once per minute. <br> 
     
     
     </p>
@@ -423,6 +439,17 @@ This includes defaults and shared settings not directly specified in the daemon-
 
   
     <p class="tab30">
+    <b>modbus_type</b> (enum) <br>
+    
+    
+     symbols: ['float32', 'uint16', 'uint32', 'int32'] <br> 
+    
+    
+    </p>
+    
+
+  
+    <p class="tab30">
     <b>channel</b> (record) <br>
     
     
@@ -438,15 +465,71 @@ This includes defaults and shared settings not directly specified in the daemon-
         </p>
         
         <p class="tab60">
+        <b>modbus_type</b> (modbus_type)
+        
+        <br>
+        
+        </p>
+        
+        <p class="tab60">
+        <b>units</b> (['string', 'null'])
+        <i>default: None</i>
+        <br>
+        
+        </p>
+        
+        <p class="tab60">
         <b>enabled</b> (boolean)
         <i>default: True</i>
         <br>
         
         </p>
         
-        <p class="tab60">
-        <b>range</b> (float)
+    
+    
+    </p>
+    
+
+  
+    <p class="tab30">
+    <b>setting</b> (record) <br>
+    
+    
+    
+    
+    fields: <br>
         
+        <p class="tab60">
+        <b>modbus_address</b> (int)
+        
+        <br>
+        
+        </p>
+        
+        <p class="tab60">
+        <b>modbus_type</b> (modbus_type)
+        
+        <br>
+        
+        </p>
+        
+        <p class="tab60">
+        <b>value</b> (['double', 'long'])
+        
+        <br>
+        
+        </p>
+        
+        <p class="tab60">
+        <b>comment</b> (string)
+        
+        <br>
+         comment for human consumption <br> 
+        </p>
+        
+        <p class="tab60">
+        <b>enabled</b> (boolean)
+        <i>default: True</i>
         <br>
         
         </p>
@@ -461,7 +544,7 @@ This includes defaults and shared settings not directly specified in the daemon-
 <hr>
 
 <p>
-built 2022-12-14 16:48:15
+built 2023-04-14 16:12:26
                                     
 <a href="https://creativecommons.org/publicdomain/zero/1.0/">CC0</a>: no copyright
 </p>
